@@ -106,6 +106,24 @@ function setup() {
       opciones: opcionesI,
     };
   }
+  celdas[8].colapsada = true;
+  celdas[3].colapsada = true;
+
+  celdas[12].colapsada = [5, 6, 8];
+  celdas[4].colapsada = [4, 7, 12];
+  celdas[1].colapsada = [6, 4, 8, 10];
+  celdas[5].colapsada = [11, 6, 4, 8, 10];
 }
 
-function draw() {}
+function draw() {
+  const celdasDisponibles = celdas.filter((celda) => {
+    return celda.colapsada == false;
+  });
+  if (celdasDisponibles.length > 0) {
+    celdasDisponibles.sort((a, b) => {
+      return a.opciones.length - b.opciones.length;
+    });
+  }
+  print(celdasDisponibles);
+  noLoop();
+}
