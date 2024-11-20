@@ -1,5 +1,5 @@
 const celdas = [];
-const RETICULA = 15;
+const RETICULA = 10;
 let ancho; //altura de la celda
 let alto; //anchura de la celda
 
@@ -93,7 +93,7 @@ function preload() {
 }
 
 function setup() {
-  createCanvas(1650, 1650);
+  createCanvas(1080, 1080);
 
   ancho = width / RETICULA;
   alto = height / RETICULA;
